@@ -6,4 +6,4 @@ start flask api
 - cd flask-server
 - flask --app server run
 
-tatarzzz hello
+tatarzzz hello2
