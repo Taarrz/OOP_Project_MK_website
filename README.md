@@ -6,4 +6,5 @@ start flask api
 - cd flask-server
 - flask --app server run
 
+dit commit first time 
 tatarzzz hello2
