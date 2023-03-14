@@ -5,3 +5,5 @@ star react web app
 start flask api
 - cd flask-server
 - flask --app server run
+
+tatarzzz hello
