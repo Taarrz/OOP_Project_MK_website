@@ -5,4 +5,8 @@ star react web app
 start flask api
 - cd flask-server
 - flask --app server run
+
 Tan
+=======
+dit commit first time 
+tatarzzz hello2
