@@ -12,30 +12,38 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <div></div>
-      <div className="bg-red">
-        <div className="items-center flex">
+    <div className="font-kanit text-white">
+      <div className="bg-red flex justify-center">
+        <div className="items-center flex w-11/12 justify-between my-3">
           <div className="">
-            <a href="/">
-              <img src=""></img>
-            </a>
-            <p>
+            <img src="/assets/pics/logo.png" alt="logo" />
+            <p className="">
               สามารถสั่งอาหารได้ <strong>10:00 - 19:45 น.</strong>
             </p>
           </div>
-          <div className="">
-            <h1>Welcome to<strong>MK Online Delivery</strong></h1>
+          <div className="grid font-semibold place-items-center py-4 space-y-3">
+            <h1 className="text-3xl">
+              Welcome to <strong>MK Online Delivery</strong>
+            </h1>
+            <div class="" className="flex">
+              {/* create 2 toggle button */}
+              <div class="button-box"className="flex">
+                <button className="btn">Create New Order</button>
+                <button className="btn">Create New Order</button>
+              </div>
+            </div>
             <div>
-              <input type="text" placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง" autoComplete="off"></input>
+              <input
+                type="text"
+                placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง"
+                autoComplete="off"
+              ></input>
             </div>
           </div>
           <div className="">
             <a href="/login">
               <div className="">
-                <i>
-                  เข้าสู่ระบบ/ลงทะเบียน
-                </i>
+                <i>เข้าสู่ระบบ/ลงทะเบียน</i>
               </div>
             </a>
             <div>

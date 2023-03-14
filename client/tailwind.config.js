@@ -9,9 +9,15 @@ module.exports = {
       'white' : '#FFFFFF'
     },
     fontFamily: {
-      'prompt' : 'Prompt, sans-serif'
+      'prompt' : 'Prompt, sans-serif',
+      'kanit' : 'Kanit, sans-serif'
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+
+  daisyui: {
+    base: false,
+    themes: false,
+  },
 }
