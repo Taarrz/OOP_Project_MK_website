@@ -12,3 +12,26 @@
     border-radius: 30px;
     background: white;
 }
+
+.toggle-button {
+    padding: 10px 40px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    text-align: center;
+}
+
+#btnn {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #e67e22;
+    border-radius: 6px;
+    transition: .5s;
+}
+
+

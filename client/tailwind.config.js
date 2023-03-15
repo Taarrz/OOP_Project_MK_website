@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     colors: {
       'red' : '#DC0000',
-      'white' : '#FFFFFF'
+      'white' : '#FFFFFF',
+      'grey' : '#D4D4D4'
     },
     fontFamily: {
       'prompt' : 'Prompt, sans-serif',
