@@ -1,18 +1,14 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom"
-
-import Home from "./pages/Home";
-import Category from "./pages/Category";
-import SingleProduct from "./pages/SingleProduct";
+import Header from "./components/Header";
+import CategoryBar from "./components/CategoryBar";
+import FilterBar from "./components/Filter";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/category/:id" element={<Category category={this.props.params.category} />} />
-        <Route path="/product/:id" element={<SingleProduct product={this.props.params.product} />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="font-kanit">
+      <Header />
+      <CategoryBar />
+      <FilterBar />
+    </div>
   );
 }
 

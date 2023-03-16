@@ -6,15 +6,13 @@
 
 
 .button-box{
-    width: 220px;
-    margin: 35px auto;
     position: relative;
-    border-radius: 30px;
-    background: white;
+    border-radius: 6px;
 }
 
 .toggle-button {
-    padding: 10px 40px;
+    width: 150px;
+    padding: 5px 15px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -27,9 +25,9 @@
     left: 0;
     top: 0;
     position: absolute;
-    width: 110px;
+    width: 50%;
     height: 100%;
-    background: #e67e22;
+    background: #9C0010;
     border-radius: 6px;
     transition: .5s;
 }

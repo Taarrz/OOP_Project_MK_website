@@ -1,6 +1,15 @@
-const Header = () => {
-    return(
-        <div className="font-kanit text-white">
+function Header() {
+  var btn = document.getElementById("btnn");
+
+  function leftClick() {
+    btn.style.left = "0";
+  }
+
+  function rightClick() {
+    btn.style.left = "50%";
+  }
+  return (
+    <div className="text-white">
       <div className="bg-red flex justify-center">
         <div className="items-center flex w-full justify-between my-2 mx-6">
           <div className="">
@@ -18,8 +27,20 @@ const Header = () => {
             <div className="flex">
               <div className="button-box flex">
                 <div id="btnn"></div>
-                <button className="toggle-button btn">เดลิเวอรี่</button>
-                <button className="toggle-button btn">รับสินค้าที่ร้าน</button>
+                <button
+                  className="flex toggle-button text-sm justify-center"
+                  onClick={leftClick}
+                >
+                  <img src="./icon/delivery.png" width={20} className="mr-3" />
+                  เดลิเวอรี่
+                </button>
+                <button
+                  className="flex toggle-button text-sm justify-center"
+                  onClick={rightClick}
+                >
+                  <img src="./icon/shop.png" width={20} className="mr-3" />
+                  รับสินค้าที่ร้าน
+                </button>
               </div>
             </div>
             <div className="search-box flex w-full justify-between">
@@ -28,19 +49,10 @@ const Header = () => {
                 type="text"
                 placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง"
                 autoComplete="off"
-                onChange={(e) => {
-                  setData(
-                    data.filter((item) => {
-                      return item.name
-                        .toLowerCase()
-                        .includes(e.target.value.toLowerCase());
-                    })
-                  );
-                }}
               />
-              <div className="search-icon grid bg-grey rounded-r-md place-items-center w-8">
+              <div className="search-icon grid bg-gray rounded-r-md place-items-center w-8">
                 <a href="/">
-                  <img src="/crosshair.png" alt="crosshair logo" width="13"/>
+                  <img src="/crosshair.png" alt="crosshair logo" width="13" />
                 </a>
               </div>
             </div>
@@ -58,7 +70,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-    );
-};
+  );
+}
 
 export default Header;
