@@ -1,13 +1,4 @@
 function Header() {
-  var btn = document.getElementById("btnn");
-
-  function leftClick() {
-    btn.style.left = "0";
-  }
-
-  function rightClick() {
-    btn.style.left = "50%";
-  }
   return (
     <div className="text-white">
       <div className="bg-red flex justify-center">
@@ -26,7 +17,7 @@ function Header() {
             </h1>
             <div className="flex">
               <div className="button-box flex">
-                <div id="btnn"></div>
+                <div id="btnn" className="left-0"></div>
                 <button
                   className="flex toggle-button text-sm justify-center"
                   onClick={leftClick}
@@ -71,6 +62,16 @@ function Header() {
       </div>
     </div>
   );
+
+  function leftClick() {
+    var btn = document.getElementById("btnn");
+    btn.style.left = "0";
+  }
+
+  function rightClick() {
+    var btn = document.getElementById("btnn");
+    btn.style.left = "50%";
+  }
 }
 
 export default Header;
