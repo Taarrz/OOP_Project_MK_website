@@ -11,7 +11,9 @@ const filterlist = [
 ];
 
 export default function FilterBar(props) {
-  const Filter = filterlist[0].content.map((filter, index) => (
+  const title_name = filterlist.filter((name) => name.title === props.title);
+
+  const Filter = title_name[0].content.map((filter, index) => (
     <div key={index} className="flex mx-3">
       <input type="checkbox" onChange={props.onFilterChange} />
       <h1 className="mx-1">{filter.name}</h1>
@@ -21,7 +23,7 @@ export default function FilterBar(props) {
   return (
     <div className="flex w-full bg-gray justify-center items-center py-5">
       <div className="border-l-2 h-6 mx-2"></div>
-      <h1 className="text-xl">{filterlist[0].title}</h1>
+      <h1 className="text-xl w-1/5">{title_name[0].title}</h1>
       {Filter}
     </div>
   );

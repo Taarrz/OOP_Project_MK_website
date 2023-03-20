@@ -2,9 +2,13 @@ class Category_Menu():
     def __init__(self, name, image_url):
         self.name = name
         self.image_url = image_url
+        self.product = []
+    
+    def add_product(self):
+        self.product.append()
 
 class Product():
-    def __init__(self, name, image_url, price, description, calories, category,  filter, option_product):
+    def __init__(self, name, image_url, price, description, calories, category, filter):
         self.name = name
         self.image_url = image_url
         self.price = price
@@ -12,7 +16,10 @@ class Product():
         self.calories = calories
         self.category = category
         self.filter = filter
-        self.option_product = option_product
+        self.option_product = []
+    
+    def add_product_option(self, option_product):
+        self.option_production.append(option_product)
 
 class Product_Option():
     def __init__(self, name, image_url):

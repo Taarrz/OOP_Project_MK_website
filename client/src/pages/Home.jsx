@@ -10,7 +10,7 @@ function Home() {
     <div className="font-kanit">
       <Header />
       <CategoryBar />
-      <FilterBar />
+      <FilterBar title="จานเดี่ยว" />
       <div className="flex justify-center mt-5">
         <div className="grid grid-cols-3 w-4/6">
           <ProductCard />
