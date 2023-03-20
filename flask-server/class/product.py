@@ -4,8 +4,8 @@ class Category_Menu():
         self.image_url = image_url
         self.product = []
     
-    def add_product(self):
-        self.product.append()
+    def add_product(self, product):
+        self.product.append(product)
 
 class Product():
     def __init__(self, name, image_url, price, description, calories, category, filter):
