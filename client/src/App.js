@@ -1,14 +1,15 @@
-import Header from "./components/Header";
-import CategoryBar from "./components/CategoryBar";
-import FilterBar from "./components/Filter";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Registor from "./pages/Registor";
 
 function App() {
   return (
-    <div className="font-kanit">
-      <Header />
-      <CategoryBar />
-      <FilterBar />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/registor" element={<Registor />}></Route>
+    </Routes>
   );
 }
 
