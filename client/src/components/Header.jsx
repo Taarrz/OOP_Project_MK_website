@@ -22,14 +22,24 @@ function Header() {
                   className="flex toggle-button text-sm justify-center"
                   onClick={leftClick}
                 >
-                  <img src="./icon/delivery.png" width={20} className="mr-3" />
+                  <img
+                    src="./icon/delivery.png"
+                    width={20}
+                    className="mr-3"
+                    alt="delivery-icon"
+                  />
                   เดลิเวอรี่
                 </button>
                 <button
                   className="flex toggle-button text-sm justify-center"
                   onClick={rightClick}
                 >
-                  <img src="./icon/shop.png" width={20} className="mr-3" />
+                  <img
+                    src="./icon/shop.png"
+                    width={20}
+                    className="mr-3"
+                    alt="shop-icon"
+                  />
                   รับสินค้าที่ร้าน
                 </button>
               </div>
@@ -49,11 +59,7 @@ function Header() {
             </div>
           </div>
           <div className="">
-            <a href="/login">
-              <div className="">
-                <i>เข้าสู่ระบบ/ลงทะเบียน</i>
-              </div>
-            </a>
+            <a href="/login">เข้าสู่ระบบ/ลงทะเบียน</a>
             <div>
               <div className="lang-select"></div>
             </div>
