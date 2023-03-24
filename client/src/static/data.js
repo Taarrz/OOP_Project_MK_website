@@ -123,10 +123,104 @@ export const productData = [
   {
     id: 8,
     name: "สแน็คบ็อกซ์ A",
-    imageUrl: "",
+    imageUrl:
+      "https://www.mk1642.com/getmetafile/81fc2694-b73b-4789-a6ad-6b2a8a681d8a/snack-box-A.aspx?maxsidesize=1900",
     price: 55,
     description: "ซาลาเปา 2 ลูก ขนมจีบ 2 ลูก",
     calories: "120",
     category: "สแน็คบ็อกซ์และจัดเลี้ยง",
+  },
+  {
+    id: 9,
+    name: "กุ้งแพกรอบต้มยำ",
+    imageUrl:
+      "https://www.mk1642.com/getmetafile/cfa3d12a-0cb6-489d-a8d9-e297bfceb8b7/%e0%b8%81%e0%b8%b8%e0%b9%89%e0%b8%87%e0%b9%81%e0%b8%9e%e0%b8%81%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%95%e0%b9%89%e0%b8%a1%e0%b8%a2%e0%b8%b3_419x260.aspx?maxsidesize=1900",
+    price: 109,
+    description: "แซ่บโคตรๆกับอาหารทานเล่นสุดคุ้ม",
+    calories: "150",
+    category: "จานเดี่ยว",
+  },
+  {
+    id: 10,
+    name: "อุด้งซี้ดต้มยำมันกุ้งรวมมิตร",
+    imageUrl:
+      "https://www.mk1642.com/getmetafile/ffb37751-300c-4960-8fe8-d1a399526f83/%e0%b8%ad%e0%b8%b8%e0%b8%94%e0%b9%89%e0%b8%87%e0%b8%8b%e0%b8%b5%e0%b9%89%e0%b8%94%e0%b8%95%e0%b9%89%e0%b8%a1%e0%b8%a2%e0%b8%b3%e0%b8%a1%e0%b8%b1%e0%b8%99%e0%b8%81%e0%b8%b8%e0%b9%89%e0%b8%87%e0%b8%a3%e0%b8%a7%e0%b8%a1%e0%b8%a1%e0%b8%b4%e0%b8%95%e0%b8%a3_419x260.aspx?maxsidesize=1900",
+    price: 139,
+    description: "แซ่บโคตรๆกับอาหารทานเล่นสุดคุ้ม",
+    calories: "100",
+    category: "จานเดี่ยว",
+  },
+];
+
+export const filterlist = [
+  {
+    title: "โปรโมชั่น",
+    content: [
+      { id: 1, name: "จานเดี่ยว" },
+      { id: 2, name: "ชุดสุดคุ้ม" },
+      { id: 3, name: "สุกี้สด" },
+      { id: 4, name: "เป็ดย่างและอื่นๆ" },
+      { id: 5, name: "ของทานเล่น" },
+      { id: 6, name: "น้ำและขนม" },
+      { id: 7, name: "สแน็คบ็อกซ์และจัดเลี้ยง" },
+    ],
+  },
+  {
+    title: "จานเดี่ยว",
+    content: [
+      { id: 1, name: "ข้าว" },
+      { id: 2, name: "บะหมี่" },
+      { id: 3, name: "สุกี้ชาม" },
+      { id: 4, name: "เกี๊ยว" },
+    ],
+  },
+  {
+    title: "ชุดสุดคุ้ม",
+    content: [
+      { id: 1, name: "เซ็ตสำหรับ 1 ท่าน" },
+      { id: 2, name: "เซ็ตสำหรับ 2 ท่านขึ้นไป" },
+      { id: 3, name: "เซ็ตสุกี้" },
+      { id: 4, name: "เซ็ตข้าว" },
+      { id: 5, name: "เซ็ตบะหมี่" },
+    ],
+  },
+  {
+    title: "สุกี้สด",
+    content: [
+      { id: 1, name: "เซ็ตสุกี้" },
+      { id: 2, name: "คอนโด" },
+      { id: 3, name: "เนื้อสัตว์" },
+      { id: 4, name: "ลูกชิ้น" },
+      { id: 5, name: "ผักและอื่นๆ" },
+    ],
+  },
+  {
+    title: "เป็ดย่างและอื่นๆ",
+    content: [
+      { id: 1, name: "เป็ด" },
+      { id: 2, name: "หมู" },
+      { id: 3, name: "เนื้อ" },
+      { id: 4, name: "ผัก" },
+      { id: 5, name: "อื่นๆ" },
+    ],
+  },
+  {
+    title: "ของทานเล่น",
+    content: [
+      { id: 1, name: "นึ่ง" },
+      { id: 2, name: "ทอด" },
+      { id: 3, name: "อื่นๆ" },
+    ],
+  },
+  {
+    title: "น้ำและขนม",
+    content: [
+      { id: 1, name: "น้ำ" },
+      { id: 2, name: "ขนม" },
+    ],
+  },
+  {
+    title: "สแน็คบ็อกซ์และจัดเลี้ยง",
+    content: [],
   },
 ];

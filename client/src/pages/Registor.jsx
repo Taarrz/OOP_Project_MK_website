@@ -1,11 +1,6 @@
-import Header from "../components/Header";
-import CategoryBar from "../components/CategoryBar";
-
 export default function Registor() {
   return (
     <div className="font-kanit">
-      <Header />
-      <CategoryBar />
       <div className="flex w-full bg-gray justify-center items-center py-5">
         <div className="flex w-1/2">
           <div className="border-l-2 h-6 mx-2"></div>

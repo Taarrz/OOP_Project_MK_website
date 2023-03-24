@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="text-white">
+    <div className="text-white font-kanit">
       <div className="bg-red flex justify-center">
         <div className="items-center flex w-full justify-between my-2 mx-6">
           <div className="">

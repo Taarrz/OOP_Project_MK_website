@@ -8,13 +8,14 @@ class Category_Menu():
         self.product.append(product)
 
 class Product():
-    def __init__(self, name, image_url, price, description, calories, category):
+    def __init__(self, name, image_url, price, description, calories, category, type):
         self.name = name
         self.image_url = image_url
         self.price = price
         self.description = description
         self.calories = calories
         self.category = category
+        self.type = type
         self.option_product = []
     
     def add_product_option(self, option_product):
