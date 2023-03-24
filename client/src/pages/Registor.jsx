@@ -7,8 +7,10 @@ export default function Registor() {
       <Header />
       <CategoryBar />
       <div className="flex w-full bg-gray justify-center items-center py-5">
-        <div className="border-l-2 h-6 mx-2"></div>
-        <h1 className="text-xl w-1/5">Registor</h1>
+        <div className="flex w-1/2">
+          <div className="border-l-2 h-6 mx-2"></div>
+          <h1 className="text-xl w-1/5">สร้างบัญชี</h1>
+        </div>
       </div>
       <div className="flex justify-center mt-5 w-full h-[550px]">
         <form className="w-1/3">

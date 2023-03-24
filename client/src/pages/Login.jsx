@@ -8,25 +8,27 @@ export default function Login() {
       <Header />
       <CategoryBar />
       <div className="flex w-full bg-gray justify-center items-center py-5">
-        <div className="border-l-2 h-6 mx-2"></div>
-        <h1 className="text-xl w-1/5">Login</h1>
+        <div className="flex w-1/2">
+          <div className="border-l-2 h-6 mx-2"></div>
+          <h1 className="text-xl w-1/5">เข้าสู่ระบบ</h1>
+        </div>
       </div>
       <div className="flex justify-center mt-5">
         <div className="w-1/3 h-max p-5 rounded-lg">
-          <h3 className="pt-4 text-2xl text-center">Login!</h3>
+          <h3 className="pt-4 text-2xl text-center">เข้าสู่ระบบ</h3>
           <form>
-            <div>
-              <label className="block mb-2 text-red">Email</label>
+            <div className="w-full">
+              <label className="block m-2 text-red">อีเมลล์</label>
               <input
-                className="px-2 py-1 rounded-lg shadow-md"
+                className="px-2 py-1 rounded-lg shadow-md w-full"
                 type="email"
                 placeholder="Ex. test@email.com"
               />
             </div>
-            <div>
-              <label className="block mb-2 text-red">Password</label>
+            <div className="w-full">
+              <label className="block m-2 text-red">รหัสผ่าน</label>
               <input
-                className="px-2 py-1 rounded-lg shadow-md"
+                className="px-2 py-1 rounded-lg shadow-md w-full"
                 type="password"
                 placeholder="**********"
               />
@@ -36,7 +38,7 @@ export default function Login() {
                 className="w-full px-4 py-2 mt-3 font-bold text-white bg-red rounded-full"
                 type="submit"
               >
-                Login
+                เข้าสู่ระบบ
               </button>
             </div>
           </form>
@@ -45,13 +47,13 @@ export default function Login() {
               className="text-red hover:text-third-color text-sm float-left"
               href="/"
             >
-              Forgot Password?
+              ลืมรหัสผ่าน?
             </a>
             <a
               className="text-red hover:text-third-color text-sm float-right"
               href="/registor"
             >
-              Create Account
+              สร้างบัญชี
             </a>
           </div>
         </div>

@@ -1,4 +1,4 @@
-export default function ProductCard() {
+export default function ProductCard(category) {
   return (
     <div className="flex flex-col items-center bg-white">
       <div className="w-[296px] h-[183px] bg-[url('https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg')] bg-cover"></div>

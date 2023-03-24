@@ -1,10 +1,14 @@
 class User:
-    def __init__(self, Id, Password, Status, Account, Order):
+    def __init__(self, Id, Password, Status):
         self._Id = Id
         self._Password = Password
         self._Status = Status
         self._Account = Account             #list of Account
-        self._Order = []                    #list of Order
+        self._Order = []   #list of Orde
+        self.product = []
+        
+    def add_product(self, product):
+        self.product.append(product)
 
 
 class Account:
