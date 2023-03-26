@@ -1,4 +1,5 @@
 function Header() {
+  var delivery = true;
   return (
     <div className="text-white font-kanit">
       <div className="bg-red flex justify-center">
@@ -44,19 +45,28 @@ function Header() {
                 </button>
               </div>
             </div>
-            <div className="search-box flex w-full justify-between">
-              <input
-                className="p-3 h-4 text-xs font-light w-full rounded-l-md"
-                type="text"
-                placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง"
-                autoComplete="off"
-              />
-              <div className="search-icon grid bg-gray rounded-r-md place-items-center w-8">
-                <a href="/">
-                  <img src="/crosshair.png" alt="crosshair logo" width="13" />
-                </a>
+            {delivery ? (
+              <div className="search-box flex w-full justify-between">
+                <input
+                  className="p-3 h-4 text-xs font-light w-full rounded-l-md"
+                  type="text"
+                  placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง"
+                  autoComplete="off"
+                />
+                <div className="search-icon grid bg-gray rounded-r-md place-items-center w-8">
+                  <a href="/">
+                    <img src="/crosshair.png" alt="crosshair logo" width="13" />
+                  </a>
+                </div>
               </div>
-            </div>
+            ) : (
+              <select
+                name="โปรดเลือกสาขา"
+                className="bg-[#9C0010] w-1/3 text-xs"
+              >
+                <option value="01">ลาดกระบัง</option>
+              </select>
+            )}
           </div>
           <div className="">
             <a href="/login">เข้าสู่ระบบ/ลงทะเบียน</a>
@@ -72,11 +82,15 @@ function Header() {
   function leftClick() {
     var btn = document.getElementById("btnn");
     btn.style.left = "0";
+    delivery = true;
+    console.log(delivery);
   }
 
   function rightClick() {
     var btn = document.getElementById("btnn");
     btn.style.left = "50%";
+    delivery = false;
+    console.log(delivery);
   }
 }
 
