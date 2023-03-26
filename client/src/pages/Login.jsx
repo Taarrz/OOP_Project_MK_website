@@ -1,14 +1,10 @@
 import React from "react";
+import FilterBar from "../components/Filter";
 
 export default function Login() {
   return (
     <div className="font-kanit">
-      <div className="flex w-full bg-gray justify-center items-center py-5">
-        <div className="flex w-1/2">
-          <div className="border-l-2 h-6 mx-2"></div>
-          <h1 className="text-xl w-1/5">เข้าสู่ระบบ</h1>
-        </div>
-      </div>
+      <FilterBar title="เข้าสู่ระบบ" />
       <div className="flex justify-center mt-5">
         <div className="w-1/3 h-max p-5 rounded-lg">
           <h3 className="pt-4 text-2xl text-center">เข้าสู่ระบบ</h3>

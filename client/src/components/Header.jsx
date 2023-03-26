@@ -23,7 +23,7 @@ function Header() {
                   onClick={leftClick}
                 >
                   <img
-                    src="./icon/delivery.png"
+                    src="../icon/delivery.png"
                     width={20}
                     className="mr-3"
                     alt="delivery-icon"
@@ -35,7 +35,7 @@ function Header() {
                   onClick={rightClick}
                 >
                   <img
-                    src="./icon/shop.png"
+                    src="../icon/shop.png"
                     width={20}
                     className="mr-3"
                     alt="shop-icon"

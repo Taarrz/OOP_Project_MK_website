@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-//import { useNavigate } from "react-router-dom";
-import { categoriesData, productData } from "../static/data";
-import FilterBar from "../components/Filter";
-import ProductCard from "./ProductCard";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { categoriesData } from "../static/data";
 
-export default function CategoryBar() {
-  const [data, setData] = useState("โปรโมชั่น");
-  //const navigate = useNavigate();
-
-  const productfilter = productData.filter(
-    (product) => product.category === data
-  );
+export default function CategoryBar(props) {
+  const navigate = useNavigate();
 
   return (
     <div className="font-kanit">
@@ -18,15 +11,15 @@ export default function CategoryBar() {
         {categoriesData &&
           categoriesData.map((category, index) => {
             const handleSubmit = (category) => {
-              //navigate(`/product?category=${category.title}`);
-              setData(category.title);
+              navigate(`/${category.title}`);
             };
             return (
               <div
                 key={index}
-                className="grid place-items-center px-14 py-2"
+                className="grid place-items-center px-10 py-2"
                 style={{
-                  backgroundColor: data === category.title && "#EEEEEE",
+                  backgroundColor:
+                    props.category === category.title && "#EEEEEE",
                 }}
                 onClick={() => handleSubmit(category)}
               >
@@ -37,14 +30,6 @@ export default function CategoryBar() {
               </div>
             );
           })}
-      </div>
-      <FilterBar title={data} />
-      <div className="flex justify-center mt-5">
-        <div className="grid grid-cols-3 w-4/6">
-          {productfilter.map((product, index) => {
-            return <ProductCard product={product} />;
-          })}
-        </div>
       </div>
     </div>
   );

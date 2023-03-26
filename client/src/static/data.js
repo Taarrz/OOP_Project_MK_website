@@ -54,7 +54,7 @@ export const productData = [
     id: 1,
     name: "Summer Freedom",
     imageUrl:
-      "https://www.mk1642.com/getmetafile/07e6d178-aa21-48cb-95c9-49553070e258/%e0%b8%a2%e0%b8%b3%e0%b8%a7%e0%b8%b8%e0%b9%89%e0%b8%99%e0%b9%80%e0%b8%aa%e0%b9%89%e0%b8%99%e0%b8%97%e0%b8%b0%e0%b9%80%e0%b8%a5_419x260.aspx?maxsidesize=1900",
+      "https://www.mk1642.com/getattachment/f2af6d3f-b7aa-40bd-8de1-e2ee113575de/4131.aspx",
     price: 499,
     description: "เลือกได้ 10 เมนูเด็ดเลย",
     calories: "490",
@@ -221,6 +221,14 @@ export const filterlist = [
   },
   {
     title: "สแน็คบ็อกซ์และจัดเลี้ยง",
+    content: [],
+  },
+  {
+    title: "เข้าสู่ระบบ",
+    content: [],
+  },
+  {
+    title: "สร้างบัญชี",
     content: [],
   },
 ];

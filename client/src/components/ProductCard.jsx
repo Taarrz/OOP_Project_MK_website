@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
 export default function ProductCard(product) {
+  const navigator = useNavigate();
+  const handleSubmit = (product) => {
+    navigator(`/singleproduct/${product.product.id}`);
+  };
   return (
-    <div className="flex flex-col items-center bg-white m-3">
+    <div
+      className="flex flex-col items-center bg-white m-3"
+      onClick={() => handleSubmit(product)}
+    >
       <img src={product.product.imageUrl} alt={product.product.id} />
       <div className="flex justify-between w-full my-2">
         <h1 className="pt-4">{product.product.name}</h1>
