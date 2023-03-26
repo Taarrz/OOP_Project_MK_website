@@ -26,3 +26,6 @@ class Order:
         self._Status = Status
         self._Payment_Status = Payment_Status           #from clss payment
         self._User_Id = User_Id                         #from User
+
+
+#JUST TESTNEW COMMIT
