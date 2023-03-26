@@ -3,8 +3,8 @@ class User:
         self._Id = Id
         self._Password = Password
         self._Status = Status
-        self._Account = Account             #list of Account
-        self._Order = []   #list of Orde
+        self._Account = Account
+        self._Order = []
         self.product = []
         
     def add_product(self, product):
@@ -24,8 +24,5 @@ class Order:
         self._Shipping_Address = Shipping_Address
         self._Total_Cost = Total_Cost
         self._Status = Status
-        self._Payment_Status = Payment_Status           #from clss payment
-        self._User_Id = User_Id                         #from User
-
-
-#JUST TESTNEW COMMIT
+        self._Payment_Status = Payment_Status
+        self._User_Id = User_Id
