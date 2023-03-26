@@ -1,15 +1,9 @@
-import Header from "../components/Header";
-import CategoryBar from "../components/CategoryBar";
+import FilterBar from "../components/Filter";
 
 export default function Registor() {
   return (
     <div className="font-kanit">
-      <Header />
-      <CategoryBar />
-      <div className="flex w-full bg-gray justify-center items-center py-5">
-        <div className="border-l-2 h-6 mx-2"></div>
-        <h1 className="text-xl w-1/5">Registor</h1>
-      </div>
+      <FilterBar title="สร้างบัญชี" />
       <div className="flex justify-center mt-5 w-full h-[550px]">
         <form className="w-1/3">
           <div className="flex my-5 justify-between">

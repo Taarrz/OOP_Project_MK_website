@@ -1,26 +1,52 @@
-import Header from "../components/Header";
-import CategoryBar from "../components/CategoryBar";
-import FilterBar from "../components/Filter";
-import ProductCard from "../components/ProductCard";
-import Login from "./Login";
 import React from "react";
+import CategoryBar from "../components/CategoryBar";
+import ProductCard from "../components/ProductCard";
+import { Slide } from "react-slideshow-image";
+import { slideImages, productData } from "../static/data";
+import "react-slideshow-image/dist/styles.css";
 
 function Home() {
+  const Slideshow = () => {
+    return (
+      <div className="slide-container">
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div key={index}>
+              <div
+                className="flex items-center justify-center bg-cover h-[450px]"
+                style={{
+                  backgroundImage: `url(${slideImage.url})`,
+                }}
+              ></div>
+            </div>
+          ))}
+        </Slide>
+      </div>
+    );
+  };
+
   return (
     <div className="font-kanit">
-      <Header />
       <CategoryBar />
-      <FilterBar title="จานเดี่ยว" />
-      <div className="flex justify-center mt-5">
-        <div className="grid grid-cols-3 w-4/6">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+      <Slideshow />
+      <div className="flex flex-col items-center mt-10">
+        <h1 className="flex items-center text-xl font-extrabold w-4/6">
+          <img
+            src="https://www.mk1642.com/getattachment/b4991225-a5e5-49b5-afe0-f7bf12af9316/Promotion.aspx"
+            alt="promotion"
+          />
+          โปรโมชั่น
+        </h1>
+        <div className="flex justify-center mt-5 w-4/5">
+          <div className="grid grid-cols-2">
+            {productData.map((product) => {
+              return (
+                product.category === "โปรโมชั่น" && (
+                  <ProductCard product={product} key={product.id} />
+                )
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
