@@ -52,7 +52,7 @@ export const categoriesData = [
 export const productData = [
   {
     id: 1,
-    name: "Summer Freedom",
+    name: "Summer Freedom 499",
     imageUrl:
       "https://www.mk1642.com/getattachment/f2af6d3f-b7aa-40bd-8de1-e2ee113575de/4131.aspx",
     price: 499,
@@ -149,6 +149,26 @@ export const productData = [
     description: "แซ่บโคตรๆกับอาหารทานเล่นสุดคุ้ม",
     calories: "100",
     category: "จานเดี่ยว",
+  },
+  {
+    id: 11,
+    name: "Summer Freedom สุดคุ้ม 799",
+    imageUrl:
+      "https://www.mk1642.com/getattachment/3e12181b-958e-4580-bd00-3fa674c1cd9f/4132.aspx",
+    price: 799,
+    description: "เหมาะสำหรับ 6 ท่าน",
+    calories: "2400",
+    category: "โปรโมชั่น",
+  },
+  {
+    id: 12,
+    name: "ชุดอร่อยสุดคุ้ม",
+    imageUrl:
+      "https://www.mk1642.com/getattachment/6307e466-7587-4048-84d9-2cc7a305e837/3975.aspx",
+    price: 559,
+    description: "จากปกติ 799",
+    calories: "1300",
+    category: "โปรโมชั่น",
   },
 ];
 
