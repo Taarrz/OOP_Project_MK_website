@@ -1,3 +1,4 @@
+import enum
 class payment :
     def __init__(self,Status,Date_time,Transaction_id):
         self.Status = Status
@@ -7,6 +8,8 @@ class payment :
         pass
     pass
 
+class payment_method :
+    pass
 
 class cash(payment) :
     def __init__(self,Cash_Tendered) :
@@ -19,3 +22,7 @@ class credit_debit_card(payment) :
         self.Name = Name
         self.Cvv = Cvv
     pass
+
+class PaymentStatus(enum) :
+    UNPAID, COMPLETED, DECLINED, CANCELLED \
+    = 1, 2, 3, 4
