@@ -3,7 +3,7 @@ function Header() {
   return (
     <div className="text-white font-kanit">
       <div className="bg-red flex justify-center">
-        <div className="items-center flex w-full justify-between my-2 mx-6">
+        <div className="items-center flex w-full justify-between my-1 mx-6">
           <div className="">
             <a href="/">
               <img src="/logo.png" alt="logo" className="h-14" />
@@ -12,8 +12,8 @@ function Header() {
               สามารถสั่งอาหารได้ <strong>10:00 - 19:45 น.</strong>
             </p>
           </div>
-          <div className="grid font-semibold w-2/5 place-items-center py-4 space-y-3">
-            <h1 className="text-2xl">
+          <div className="grid font-semibold w-1/3 place-items-center py-4 space-y-3">
+            <h1 className="text-3xl">
               Welcome to <strong>MK Online Delivery</strong>
             </h1>
             <div className="flex">
@@ -70,8 +70,15 @@ function Header() {
           </div>
           <div className="">
             <a href="/login">เข้าสู่ระบบ/ลงทะเบียน</a>
-            <div>
-              <div className="lang-select"></div>
+            <div className="flex items-center justify-end mt-3">
+              <div className="relative">
+                <img
+                  src="https://www.mk1642.com/App_Themes/Source/images/ico/Group-1610.png"
+                  alt="cart_logo"
+                />
+                <p className="absolute left-6 top-4 text-sm">0</p>
+              </div>
+              <p className="ml-5">0 .-</p>
             </div>
           </div>
         </div>
