@@ -12,12 +12,12 @@ function Home() {
         <Slide>
           {slideImages.map((slideImage, index) => (
             <div key={index}>
-              <div
-                className="flex items-center justify-center bg-cover h-[450px]"
-                style={{
-                  backgroundImage: `url(${slideImage.url})`,
-                }}
-              ></div>
+              <div className="items-center justify-center bg-cover hidden md:flex">
+                <img src={slideImage.url} className="w-full h-auto" />
+              </div>
+              <div className="flex items-center justify-center bg-cover md:hidden">
+                <img src={slideImage.surl} className="w-full h-auto" />
+              </div>
             </div>
           ))}
         </Slide>
