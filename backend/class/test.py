@@ -1,16 +1,13 @@
+import User
 import product as p
+mk = User.MkDelivery()
 
-palo = p.Product("เปาครีมทอด","",65,"salapow so good","80 Cal","ของทานเล่น")
-bamii = p.Product("บะหมี่หยกเป็ดย่าง","",102,"best seller","160 Cal","เส้น")
-mutod = p.Product("หมูทอด","",89,"best seller","75 Cal","ทอด")
+mk.add_product(p.Product("sushi","https:",20,"japan food","150","one"))
+mk.add_product(p.Product("chicken","https:",50,"japan food","150","one"))
+mk.add_product(p.Product("rice","https:",40,"thai food","150","two"))
 
-palo_items = p.Cart_item(palo,2)
-bamii_items = p.Cart_item(bamii,3)
-mutod_items = p.Cart_item(mutod,15)
+mk.add_user(User.User("01","test@gmail.com"))
+mk.add_user(User.User("02","number2@gmail.com"))
 
-cart = p.Cart()
-cart.add_cart_item(palo_items)
-cart.add_cart_item(bamii_items)
-cart.add_cart_item(mutod_items)
-
-cart.show_cart()
+#mk.list_product()
+mk.search_product("rice")
