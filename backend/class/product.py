@@ -8,15 +8,13 @@ class Category_Menu():
         self.product.append(product)
 
 class Product():
-    def __init__(self, name, image_url, price, description, calories, category, type):
+    def __init__(self, name, image_url, price, description, calories, category):
         self.name = name
         self.image_url = image_url
         self.price = price
         self.description = description
         self.calories = calories
         self.category = category
-        self.type = type
-        self.option_product = []
     
     def add_product_option(self, option_product):
         self.option_production.append(option_product)
@@ -42,9 +40,11 @@ class Cart():
     
     def add_cart_item(self,cart_item):
         self.cart_item.append(cart_item)
+        self.calculate_cost()
 
     def calculate_cost(self):
-        pass
+        for item in  self.cart_item:
+            self.total_cost += item.product.price * item.quantity
 
     def show_cart(self):
         for i in self.cart_item:

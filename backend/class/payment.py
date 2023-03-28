@@ -1,10 +1,10 @@
 import enum
 class payment :
-    def __init__(self,Status,Date_time,Transaction_id):
+    def __init__(self,Status,Date_time,Transaction_id, order):
         self.Status = Status
         self.Date_time = Date_time
         self.Transaction_id = Transaction_id
-    pass
+        self.total_cost = order._Total_Cost
 
 class cash(payment) :
     def __init__(self,Cash_Tendered) :
@@ -18,6 +18,6 @@ class credit_debit_card(payment) :
         self.Cvv = Cvv
     pass
 
-class PaymentStatus(enum) :
-    UNPAID, COMPLETED, DECLINED, CANCELLED \
-    = 1, 2, 3, 4
+# class PaymentStatus(enum) :
+#     UNPAID, COMPLETED, DECLINED, CANCELLED \
+#     = 1, 2, 3, 4
