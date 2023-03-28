@@ -4,11 +4,6 @@ class payment :
         self.Status = Status
         self.Date_time = Date_time
         self.Transaction_id = Transaction_id
-    def return_transaction_id() :
-        pass
-    pass
-
-class payment_method :
     pass
 
 class cash(payment) :
