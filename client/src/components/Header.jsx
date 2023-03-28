@@ -1,15 +1,7 @@
 function Header() {
-  var btn = document.getElementById("btnn");
-
-  function leftClick() {
-    btn.style.left = "0";
-  }
-
-  function rightClick() {
-    btn.style.left = "50%";
-  }
+  var delivery = true;
   return (
-    <div className="text-white">
+    <div className="text-white font-kanit">
       <div className="bg-red flex justify-center">
         <div className="items-center flex w-full justify-between my-2 mx-6">
           <div className="">
@@ -26,43 +18,58 @@ function Header() {
             </h1>
             <div className="flex">
               <div className="button-box flex">
-                <div id="btnn"></div>
+                <div id="btnn" className="left-0"></div>
                 <button
                   className="flex toggle-button text-sm justify-center"
                   onClick={leftClick}
                 >
-                  <img src="./icon/delivery.png" width={20} className="mr-3" />
+                  <img
+                    src="../icon/delivery.png"
+                    width={20}
+                    className="mr-3"
+                    alt="delivery-icon"
+                  />
                   เดลิเวอรี่
                 </button>
                 <button
                   className="flex toggle-button text-sm justify-center"
                   onClick={rightClick}
                 >
-                  <img src="./icon/shop.png" width={20} className="mr-3" />
+                  <img
+                    src="../icon/shop.png"
+                    width={20}
+                    className="mr-3"
+                    alt="shop-icon"
+                  />
                   รับสินค้าที่ร้าน
                 </button>
               </div>
             </div>
-            <div className="search-box flex w-full justify-between">
-              <input
-                className="p-3 h-4 text-xs font-light w-full rounded-l-md"
-                type="text"
-                placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง"
-                autoComplete="off"
-              />
-              <div className="search-icon grid bg-gray rounded-r-md place-items-center w-8">
-                <a href="/">
-                  <img src="/crosshair.png" alt="crosshair logo" width="13" />
-                </a>
+            {delivery ? (
+              <div className="search-box flex w-full justify-between">
+                <input
+                  className="p-3 h-4 text-xs font-light w-full rounded-l-md"
+                  type="text"
+                  placeholder="ค้นหาสถานที่เพื่อตรวจสอบพื้นที่จัดส่ง"
+                  autoComplete="off"
+                />
+                <div className="search-icon grid bg-gray rounded-r-md place-items-center w-8">
+                  <a href="/">
+                    <img src="/crosshair.png" alt="crosshair logo" width="13" />
+                  </a>
+                </div>
               </div>
-            </div>
+            ) : (
+              <select
+                name="โปรดเลือกสาขา"
+                className="bg-[#9C0010] w-1/3 text-xs"
+              >
+                <option value="01">ลาดกระบัง</option>
+              </select>
+            )}
           </div>
           <div className="">
-            <a href="/login">
-              <div className="">
-                <i>เข้าสู่ระบบ/ลงทะเบียน</i>
-              </div>
-            </a>
+            <a href="/login">เข้าสู่ระบบ/ลงทะเบียน</a>
             <div>
               <div className="lang-select"></div>
             </div>
@@ -71,6 +78,20 @@ function Header() {
       </div>
     </div>
   );
+
+  function leftClick() {
+    var btn = document.getElementById("btnn");
+    btn.style.left = "0";
+    delivery = true;
+    console.log(delivery);
+  }
+
+  function rightClick() {
+    var btn = document.getElementById("btnn");
+    btn.style.left = "50%";
+    delivery = false;
+    console.log(delivery);
+  }
 }
 
 export default Header;
