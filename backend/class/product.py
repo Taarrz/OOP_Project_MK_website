@@ -38,7 +38,7 @@ class Cart():
         self.total_cost = 0
         self.shipping_cost = 0
     
-    def add_cart_item(self,cart_item):
+    def add_cart_item(self, cart_item):
         self.cart_item.append(cart_item)
         self.calculate_cost()
 
