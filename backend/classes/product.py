@@ -8,8 +8,10 @@ class ProductCategory():
     def add_product(self, product):
         self.product.append(product)
 
-    def get_product(self):
-        return self.product
+    def get_product(self, id):
+        for product in self.product:
+            if product.id == id:
+                return product
 
 class Product():
     id_count = 0
