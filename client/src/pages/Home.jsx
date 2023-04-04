@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CategoryBar from "../components/CategoryBar";
 import ProductCard from "../components/ProductCard";
 import { Slide } from "react-slideshow-image";
@@ -6,6 +6,11 @@ import { slideImages, productData } from "../static/data";
 import "react-slideshow-image/dist/styles.css";
 
 function Home() {
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/โปรโมชั่น")
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  });
   const Slideshow = () => {
     return (
       <div className="slide-container">
@@ -13,10 +18,18 @@ function Home() {
           {slideImages.map((slideImage, index) => (
             <div key={index}>
               <div className="items-center justify-center bg-cover hidden md:flex">
-                <img src={slideImage.url} className="w-full h-auto" />
+                <img
+                  src={slideImage.url}
+                  className="w-full h-auto"
+                  alt={slideImage.caption}
+                />
               </div>
               <div className="flex items-center justify-center bg-cover md:hidden">
-                <img src={slideImage.surl} className="w-full h-auto" />
+                <img
+                  src={slideImage.surl}
+                  className="w-full h-auto"
+                  alt={slideImage.caption}
+                />
               </div>
             </div>
           ))}
