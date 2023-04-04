@@ -1,3 +1,4 @@
+from order import*
 class Addmin:
     def __init__(self, Id, Name, Email):
         self._Id = Id
@@ -16,6 +17,14 @@ class User:
         
     def add_product(self, product):
         self.product.append(product)
+
+    def cancel_order(self,order) :
+        if(self._Status=="CONFIRM"):
+            self._Status="CANCELED"
+            print("Order Canceled")
+            Payment.return_payment(self)
+        else :
+            print("error ja")
 
 
 class Account:
