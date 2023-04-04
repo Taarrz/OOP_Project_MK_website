@@ -1,15 +1,29 @@
-from typing import Union
 import jsons
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from typing import Union
 from classes.system import MkDelivery
 from classes.User import *
 from classes.product import *
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8000/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 mk = MkDelivery()
 
-mk.add_user(Customer("Ohm","0994448535","Japan",Account("ohm@gmail.com","123456")))
-mk.add_user(Admin("Tar","0945453453",Account("Tar@gmail.com","654321")))
+mk.add_user(Customer("Ohm","0994448535",Account("ohm@gmail.com","123456"),"Japan"))
+mk.add_user(Admin("Tar","0945453453",Account("ohm@gmail.com","123456")))
 
 mk.add_category(ProductCategory("โปรโมชั่น","https://www.mk1642.com/getattachment/b4991225-a5e5-49b5-afe0-f7bf12af9316/Promotion.aspx"))
 mk.add_category(ProductCategory("จานเดี่ยว","https://www.mk1642.com/getattachment/14c574d8-4a19-4c9e-8d8f-63dd3c242acf/SingleDish.aspx"))
@@ -25,8 +39,6 @@ mk.category("โปรโมชั่น").add_product(Product("Summer Freedom 7
 mk.category("จานเดี่ยว").add_product(Product("ยำวุ้นเส้น","https://www.mk1642.com/getmetafile/07e6d178-aa21-48cb-95c9-49553070e258/%e0%b8%a2%e0%b8%b3%e0%b8%a7%e0%b8%b8%e0%b9%89%e0%b8%99%e0%b9%80%e0%b8%aa%e0%b9%89%e0%b8%99%e0%b8%97%e0%b8%b0%e0%b9%80%e0%b8%a5_419x260.aspx?maxsidesize=1900",139,"แซ่บมากๆ","150","ยำ"))
 
 
-mk.category("โปรโมชั่น").get_product()
-
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
@@ -35,17 +47,18 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-@app.get("/category_product/{product_name}")
-def read_product(product_name: str):
-    return {"product_name": product_name, }
+###################################################################
 
-@app.post("/category_product")
-async def get_category_product(data:dict)->dict:
-    name_d = data["name"]
-    product_list = mk.category(name_d).get_product()
-    dt = {}
-    dt[name_d] = product_list
+@app.get("/{category_name}")
+def read_all_product_in_category(category_name: str):
+    dt = []
+    for product in mk.category(category_name).product:
+        dt.append(product)
     return dt
+
+@app.get("/{category_name}/{product_id}")
+def read_product(category_name: str, product_id: int):
+    return mk.category(category_name).get_product(product_id)
 
 @app.post("/register")
 async def register(data:dict)->dict:

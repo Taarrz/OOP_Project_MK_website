@@ -2,7 +2,7 @@ from classes.product import *
 from enum import Enum
 
 class Account:
-    def __init__(self, email, password, status):
+    def __init__(self, email, password, status = "ACTIVE"):
         self.email = email
         self.password = password
         self.status = status
@@ -33,8 +33,8 @@ class User:
         pass
 
 class Customer(User):
-    def __init__(self, name, phone, address = None):
-        super().__init__(name, phone)
+    def __init__(self, name, phone, account, address = None):
+        super().__init__(name, phone, account)
         self.address = address
         self.cart = Cart()
 
@@ -42,8 +42,8 @@ class Customer(User):
         self.cart.add_cart_item(product, quantity)
 
 class Admin(User):
-    def __init__(self, name, phone):
-        super().__init__(name, phone)
+    def __init__(self, name, phone, account):
+        super().__init__(name, phone, account)
 
     def add_product():
         pass
