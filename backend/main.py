@@ -1,15 +1,15 @@
 from typing import Union
-
+import jsons
 from fastapi import FastAPI
 from classes.system import MkDelivery
-from classes.User import Customer , Admin
-from classes.product import Product , ProductCategory
+from classes.User import *
+from classes.product import *
 app = FastAPI()
 
 mk = MkDelivery()
 
-mk.add_user(Customer("Ohm","0994448535","test@gmail.com","123456","Japan"))
-mk.add_user(Admin("Tar","0945453453","tar@gmail.com","7654321"))
+mk.add_user(Customer("Ohm","0994448535","Japan",Account("ohm@gmail.com","123456")))
+mk.add_user(Admin("Tar","0945453453",Account("Tar@gmail.com","654321")))
 
 mk.add_category(ProductCategory("โปรโมชั่น","https://www.mk1642.com/getattachment/b4991225-a5e5-49b5-afe0-f7bf12af9316/Promotion.aspx"))
 mk.add_category(ProductCategory("จานเดี่ยว","https://www.mk1642.com/getattachment/14c574d8-4a19-4c9e-8d8f-63dd3c242acf/SingleDish.aspx"))
@@ -35,17 +35,26 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-@app.post("/get_product_list")
-async def get_product_list(data:dict)->dict:
+@app.get("/category_product/{product_name}")
+def read_product(product_name: str):
+    return {"product_name": product_name, }
+
+@app.post("/category_product")
+async def get_category_product(data:dict)->dict:
     name_d = data["name"]
     product_list = mk.category(name_d).get_product()
-    data = {}
-    for product in product_list:
-        data[product.id] = product
-    return {"Data": data}
+    dt = {}
+    dt[name_d] = product_list
+    return dt
 
-# @app.post("/get_search_product")
-# async def get_search_product(data:dict)->dict:
-#     name_d = data["name"]
-#     product = mk.search_product(name_d)
-#     return {"Data": product}
+@app.post("/register")
+async def register(data:dict)->dict:
+    email_d = data["email"]
+    password_d = data["password"]
+    name_d = data["name"]
+    phone_d = data["phone"]
+    mk.add_user(User(name_d, phone_d, Account(email_d, password_d)))
+    user = mk.user(name_d)
+    dt = {}
+    dt[user.id] = user
+    return {"Data": dt}

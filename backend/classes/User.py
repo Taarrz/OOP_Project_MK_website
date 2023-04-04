@@ -1,21 +1,40 @@
-from classes.product import Cart
+from classes.product import *
+from enum import Enum
 
 class Account:
-    def __init__(self, id, email, password):
-        self.id = id
+    def __init__(self, email, password, status):
         self.email = email
         self.password = password
+        self.status = status
+        
+
+class AccountStatus(Enum):
+    ACTIVE = 1
+    BLOCKED = 2
+    BANNED = 3
+    UNKNOWN = 4
 
 class User:
-    def __init__(self, name, phone, email, password):
+    id_count = 0
+    def __init__(self, name, phone, account):
+        self.id = User.id_count
         self.name = name
         self.phone = phone
-        self.email = email
-        self.password = password
+        self.accounts = account
+        User.id_count += 1
+
+    def verify_login(self, email, password):
+        if self.account.email == email and self.account.password == password:
+            return True
+        else:
+            return False
+
+    def edit_profile(self):
+        pass
 
 class Customer(User):
-    def __init__(self, name, phone, email, password, address):
-        super().__init__(name, phone, email, password)
+    def __init__(self, name, phone, address = None):
+        super().__init__(name, phone)
         self.address = address
         self.cart = Cart()
 
@@ -23,10 +42,13 @@ class Customer(User):
         self.cart.add_cart_item(product, quantity)
 
 class Admin(User):
-    def __init__(self, name, phone, email, password):
-        super().__init__(name, phone, email, password)
+    def __init__(self, name, phone):
+        super().__init__(name, phone)
 
     def add_product():
+        pass
+
+    def delete_product():
         pass
 
     

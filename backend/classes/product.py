@@ -42,14 +42,14 @@ class Cart():
         self.cart_items = []
         self.total_cost = 0
         self.shipping_cost = 0
-
-    def show_cart(self):
-        print(jsons.dump(self))
     
     def add_cart_item(self, product, quantity):
         cart_item = Cart_item(product, quantity)
         self.cart_items.append(cart_item)
         self.calculate_cost(cart_item)
+
+    def remove_item(self):
+        pass
 
     def calculate_cost(self, cart_item):
         self.total_cost += cart_item.product.price * cart_item.quantity
