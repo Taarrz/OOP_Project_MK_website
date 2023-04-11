@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import CategoryBar from "../components/CategoryBar";
 import ProductCard from "../components/ProductCard";
 import { Slide } from "react-slideshow-image";
-import { slideImages, productData } from "../static/data";
+import { slideImages } from "../static/data";
 import "react-slideshow-image/dist/styles.css";
 
 function Home() {
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/โปรโมชั่น")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  });
+    axios.get("/โปรโมชั่น").then((res) => setProducts(res.data));
+  }, []);
   const Slideshow = () => {
     return (
       <div className="slide-container">
@@ -52,11 +52,13 @@ function Home() {
         </h1>
         <div className="flex justify-center mt-5 w-4/5">
           <div className="grid grid-cols-2">
-            {productData.map((product) => {
+            {products.map((product) => {
               return (
-                product.category === "โปรโมชั่น" && (
-                  <ProductCard product={product} key={product.id} />
-                )
+                <ProductCard
+                  product={product}
+                  category={product.name}
+                  key={product.id}
+                />
               );
             })}
           </div>

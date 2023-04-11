@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Registor from "./pages/Registor";
+import Register from "./pages/Registor";
 import Header from "./components/Header";
 import SingleProduct from "./pages/SingleProduct";
 import Category from "./pages/Category";
@@ -14,8 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:category" element={<Category />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/registor" element={<Registor />} />
-        <Route path="/singleproduct/:id" element={<SingleProduct />} />
+        <Route path="/registor" element={<Register />} />
+        <Route path="/:category/:id" element={<SingleProduct />} />
       </Routes>
     </BrowserRouter>
   );
