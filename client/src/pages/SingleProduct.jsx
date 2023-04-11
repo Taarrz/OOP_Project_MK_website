@@ -1,10 +1,14 @@
 import { useParams } from "react-router-dom";
-import { productData } from "../static/data";
 import CategoryBar from "../components/CategoryBar";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const SingleProduct = () => {
-  const { id } = useParams();
-  const singleproduct = productData.filter((product) => `${product.id}` === id);
+  const { category, id } = useParams();
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    axios.get(`/${category}/${id}`).then((res) => setProduct(res.data));
+  }, [category, id]);
   return (
     <div className="font-kanit">
       <CategoryBar />
@@ -13,19 +17,17 @@ const SingleProduct = () => {
           <img
             className="rounded-xl"
             width={540}
-            src={singleproduct[0].imageUrl}
-            alt={singleproduct[0].id}
+            src={product.image_url}
+            alt={product.id}
           />
           <div className="flex my-2 items-center justify-end">
             <div className="bg-red w-4 h-4 rounded-full mr-2"></div>
-            <p>{singleproduct[0].calories} kcal.</p>
+            <p>{product.calories} kcal.</p>
           </div>
         </div>
         <div className="mx-5 w-[30%]">
-          <h1 className="font-extrabold text-3xl mb-2">
-            {singleproduct[0].name}
-          </h1>
-          <p>{singleproduct[0].description}</p>
+          <h1 className="font-extrabold text-3xl mb-2">{product.name}</h1>
+          <p>{product.description}</p>
           <div className="flex items-center justify-between mt-9">
             <div className="flex items-center">
               <h1>จำนวน</h1>
@@ -45,7 +47,7 @@ const SingleProduct = () => {
                 alt="cart-icon"
               />
               <div className="border-l h-5"></div>
-              {singleproduct[0].price} .-
+              {product.price} .-
             </button>
           </div>
         </div>
@@ -56,7 +58,6 @@ const SingleProduct = () => {
 
 export default SingleProduct;
 
-//plus button function
 function plus() {
   var quantity = parseInt(document.getElementById("quantity").innerHTML);
   quantity += 1;

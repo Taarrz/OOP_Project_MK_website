@@ -3,9 +3,15 @@ from enum import Enum
 
 class Account:
     def __init__(self, email, password, status = "ACTIVE"):
-        self.email = email
-        self.password = password
-        self.status = status
+        self._email = email
+        self._password = password
+        self._status = status
+
+    def get_email(self):
+        return(self._email)
+    
+    def get_password(self):
+        return(self._password)
         
 
 class AccountStatus(Enum):
@@ -16,34 +22,38 @@ class AccountStatus(Enum):
 
 class User:
     id_count = 0
-    def __init__(self, name, phone, account):
+    def __init__(self, name, phone, account, role):
         self.id = User.id_count
-        self.name = name
-        self.phone = phone
-        self.accounts = account
+        self._name = name
+        self._phone = phone
+        self._accounts = account
+        self._role = role
         User.id_count += 1
 
-    def verify_login(self, email, password):
-        if self.account.email == email and self.account.password == password:
-            return True
-        else:
-            return False
-
+    def get_name(self):
+        return self._name
+    
+    def get_account(self):
+        return self._accounts
+    
     def edit_profile(self):
         pass
 
 class Customer(User):
-    def __init__(self, name, phone, account, address = None):
-        super().__init__(name, phone, account)
+    def __init__(self, name, phone, account, address = None, role = "customer"):
+        super().__init__(name, phone, account, role)
         self.address = address
-        self.cart = Cart()
+        self.__cart = Cart()
 
     def create_cart_item(self, product, quantity):
-        self.cart.add_cart_item(product, quantity)
+        self.__cart.add_cart_item(product, quantity)
+
+    def get_cart(self):
+        return self.__cart
 
 class Admin(User):
-    def __init__(self, name, phone, account):
-        super().__init__(name, phone, account)
+    def __init__(self, name, phone, account, role = "admin"):
+        super().__init__(name, phone, account, role)
 
     def add_product():
         pass
@@ -52,4 +62,3 @@ class Admin(User):
         pass
 
     
-
