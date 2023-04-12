@@ -1,9 +1,10 @@
+from .user import *
 class MkDelivery():
     def __init__(self):
         self.__user_list = []
         self.__category_list = []
         self.__location_list = []
-        self.__verify_user = None
+        self.__verify_user = User("","",Account("",""),"")
 
     def add_user(self, user):
         self.__user_list.append(user)

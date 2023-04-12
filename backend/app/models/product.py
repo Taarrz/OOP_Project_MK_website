@@ -75,3 +75,4 @@ class Cart():
             if item.product.name == name:
                 self.cart_items.remove(item)
         self.calculate_cost()
+        self.amount = len(self.cart_items)

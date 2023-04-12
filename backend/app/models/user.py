@@ -1,4 +1,4 @@
-from classes.product import *
+from .product import *
 from enum import Enum
 
 class Account:
@@ -28,6 +28,7 @@ class User:
         self._phone = phone
         self._accounts = account
         self._role = role
+        self.__cart = Cart()
         User.id_count += 1
 
     def get_name(self):
@@ -39,17 +40,13 @@ class User:
     def edit_profile(self):
         pass
 
+    def get_cart(self):
+        return self.__cart
+
 class Customer(User):
     def __init__(self, name, phone, account, address = None, role = "customer"):
         super().__init__(name, phone, account, role)
         self.address = address
-        self.__cart = Cart()
-
-    def create_cart_item(self, product, quantity):
-        self.__cart.add_cart_item(product, quantity)
-
-    def get_cart(self):
-        return self.__cart
 
 class Admin(User):
     def __init__(self, name, phone, account, role = "admin"):
