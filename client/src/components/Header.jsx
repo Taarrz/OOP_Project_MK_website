@@ -6,10 +6,8 @@ function Header() {
   var delivery = true;
   const [show, setShow] = useState(false);
   const [cart, setCart] = useState([]);
-
   const showCart = () => setShow(true);
   const hideCart = () => setShow(false);
-
   useEffect(() => {
     axios.get("/getcart").then((res) => setCart(res.data));
   }, []);
@@ -123,14 +121,12 @@ function Header() {
     var btn = document.getElementById("btnn");
     btn.style.left = "0";
     delivery = true;
-    console.log(delivery);
   }
 
   function rightClick() {
     var btn = document.getElementById("btnn");
     btn.style.left = "50%";
     delivery = false;
-    console.log(delivery);
   }
 }
 

@@ -9,10 +9,9 @@ export default function Register() {
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const register = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    //post register axios api
     axios
       .post("/register", {
         name: name,
@@ -36,7 +35,7 @@ export default function Register() {
     <div className="font-kanit">
       <FilterBar title="สร้างบัญชี" />
       <div className="flex justify-center mt-5 w-full h-[550px]">
-        <form className="w-1/3" onSubmit={(e) => register(e)}>
+        <form className="w-1/3" onSubmit={(e) => handleRegister(e)}>
           <div className="flex my-5 justify-between">
             <div className="flex flex-col">
               <label>คำนำหน้า</label>

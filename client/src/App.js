@@ -15,7 +15,7 @@ function App() {
         <Route path="/:category" element={<Category />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registor" element={<Register />} />
-        <Route path="/:category/:id" element={<SingleProduct />} />
+        <Route path="/:category/:name" element={<SingleProduct />} />
       </Routes>
     </BrowserRouter>
   );

@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 export default function ProductCard(props) {
   const navigator = useNavigate();
   const handleSubmit = (product) => {
-    navigator(`/${props.category}/${product.id}`);
+    navigator(`/${props.category}/${product.name}`);
   };
   return (
     <div
-      className="flex flex-col items-center bg-white m-3"
+      className="flex flex-col items-center bg-white m-3 cursor-pointer"
       onClick={() => handleSubmit(props.product)}
     >
       <img
