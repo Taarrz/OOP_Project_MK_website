@@ -1,4 +1,5 @@
 clone from https://www.mk1642.com/th/
+
 star react web app
 
 - cd client
@@ -6,5 +7,5 @@ star react web app
 
 start fast api
 
-- cd backend/app
+- cd backend
 - uvicorn main:app --reload
