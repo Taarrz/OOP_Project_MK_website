@@ -30,7 +30,7 @@ export default function Cart(props) {
                 +
               </button>
             </div>
-            <p>{item.product.price * item.quantity} .-</p>
+            <p>{item.sub_cost} .-</p>
           </div>
         );
       })}

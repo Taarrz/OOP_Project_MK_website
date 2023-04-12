@@ -11,6 +11,7 @@ function Home() {
   useEffect(() => {
     axios.get("/โปรโมชั่น").then((res) => setProducts(res.data));
   }, []);
+
   const Slideshow = () => {
     return (
       <div className="slide-container">
@@ -56,7 +57,7 @@ function Home() {
               return (
                 <ProductCard
                   product={product}
-                  category={product.name}
+                  category={"โปรโมชั่น"}
                   key={product.id}
                 />
               );
