@@ -16,5 +16,5 @@ def read_user_list():
     return mk.get_all_user()
 
 @router.get("/verify")
-def read_verify_user():
+async def read_verify_user():
     return mk.get_verify_user()
