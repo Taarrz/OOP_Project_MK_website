@@ -241,6 +241,10 @@ export const filterlist = [
     title: "สร้างบัญชี",
     content: [],
   },
+  {
+    title: "โปรไฟล์",
+    content: [],
+  },
 ];
 
 export const slideImages = [

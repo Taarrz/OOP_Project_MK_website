@@ -1,8 +1,11 @@
 from fastapi import APIRouter
-from ..data import mk
-from models.user import Customer, Account
+from models.user import Customer, Account, User
+import sys
 
-router = APIRouter(prefix="/auth")
+sys.path.append('/backend/')
+from data import mk
+
+router = APIRouter(prefix="/auth", tags=['auth'])
 
 @router.post("/register")
 async def register(data: dict)->dict:
@@ -21,8 +24,13 @@ def login(data: dict)->dict:
     email_d = data["email"]
     password_d = data["password"]
     user = mk.get_user(email_d)
-    if user is None: return {"Data": {"status":"Login Failed"}}
-    if user.get_account().get_password() != password_d: return {"Data": {"status":"Login Failed"}}
+    if user is None: return {"status":"Login Failed"}
+    if user.get_account().get_password() != password_d: return {"status":"Login Failed"}
     else:
         mk.set_verify_user(user)
-        return {"Data": {"status":"Login success", "user":mk.get_verify_user()}}
+        return {"status":"Login success", "user":mk.get_verify_user()}
+
+@router.delete("/logout")
+def logout():
+    mk.set_verify_user(User("","",Account("",""),""))
+    return {"status":"Logout Success"}

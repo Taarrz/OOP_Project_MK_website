@@ -9,7 +9,7 @@ const Category = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get(`/${category}`).then((res) => setProducts(res.data));
+    axios.get(`/category/${category}`).then((res) => setProducts(res.data));
   }, [category]);
 
   return (

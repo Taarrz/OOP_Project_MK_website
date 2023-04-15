@@ -6,7 +6,7 @@ export default function CategoryBar(props) {
   const navigate = useNavigate();
   const [categorys, setCategorys] = useState();
   useEffect(() => {
-    axios.get("/categoryList").then((res) => setCategorys(res.data));
+    axios.get("/category").then((res) => setCategorys(res.data));
   }, []);
   return (
     <div className="font-kanit">

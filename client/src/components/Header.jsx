@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Cart from "../components/Cart";
 import axios from "axios";
+import AuthContext from "../context/auth";
 
 function Header() {
   var delivery = true;
@@ -8,8 +9,10 @@ function Header() {
   const [cart, setCart] = useState([]);
   const showCart = () => setShow(true);
   const hideCart = () => setShow(false);
+  const { isLogin } = useContext(AuthContext);
+
   useEffect(() => {
-    axios.get("/getcart").then((res) => setCart(res.data));
+    axios.get("/cart/get").then((res) => setCart(res.data));
   }, []);
 
   return (
@@ -87,10 +90,13 @@ function Header() {
             )}
           </div>
           <div className="">
-            <a href="/login" className="hidden lg:block text-sm">
-              เข้าสู่ระบบ/ลงทะเบียน
-            </a>
-            {/* cart */}
+            {isLogin ? (
+              <a href="/profile">profile</a>
+            ) : (
+              <a href="/login" className="hidden lg:block text-sm">
+                เข้าสู่ระบบ/ลงทะเบียน
+              </a>
+            )}
             <div
               className="lg:flex items-center justify-end mt-1 hover:cursor-pointer"
               onClick={(e) => {

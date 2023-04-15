@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import FilterBar from "../components/Filter";
 import axios from "axios";
+import useAuth from "../context/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post("/login", {
+      .post("/auth/login", {
         email: email,
         password: password,
       })
-      .then(() => {
+      .then((res) => {
         setIsLoading(false);
+        setIsInvalid(false);
         setEmail("");
         setPassword("");
-        window.location.replace("/");
+        if (res.data.status !== "Login Failed") {
+          window.location.replace("/");
+        } else {
+          setIsInvalid(true);
+        }
       })
-      .catch((err) => {
+      .catch(() => {
         setIsLoading(false);
       });
   };
@@ -32,6 +39,12 @@ export default function Login() {
       <div className="flex justify-center mt-5">
         <div className="w-1/3 h-max p-5 rounded-lg">
           <h3 className="pt-4 text-2xl text-center">เข้าสู่ระบบ</h3>
+          {isInvalid && (
+            <div className="flex border-red border rounded-md bg-red bg-opacity-25 px-6 py-4 my-4">
+              <img src="" alt="" />
+              <p>invalid email or password</p>
+            </div>
+          )}
           <form onSubmit={(e) => handleLogin(e)}>
             <div className="w-full">
               <label className="block m-2 text-red">อีเมลล์</label>
