@@ -13,7 +13,7 @@ export default function Register() {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post("/register", {
+      .post("/auth/register", {
         name: name,
         email: email,
         password: password,
@@ -25,7 +25,7 @@ export default function Register() {
         setEmail("");
         setPassword("");
         setPhone("");
-        window.location.replace("/");
+        window.location.replace("/login");
       })
       .catch((err) => {
         setIsLoading(false);

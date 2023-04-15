@@ -10,13 +10,15 @@ const SingleProduct = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    axios.get(`/${category}/${name}`).then((res) => setProduct(res.data));
+    axios
+      .get(`/category/${category}/${name}`)
+      .then((res) => setProduct(res.data));
   }, [category, name]);
 
   const handleAddToCart = () => {
     setIsLoading(true);
     axios
-      .post("/addtocart", {
+      .post("/cart/add", {
         category: category,
         product: name,
         quantity: quantity,

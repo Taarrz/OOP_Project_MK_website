@@ -9,7 +9,7 @@ import "react-slideshow-image/dist/styles.css";
 function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get("/โปรโมชั่น").then((res) => setProducts(res.data));
+    axios.get("/category/โปรโมชั่น").then((res) => setProducts(res.data));
   }, []);
 
   const Slideshow = () => {
